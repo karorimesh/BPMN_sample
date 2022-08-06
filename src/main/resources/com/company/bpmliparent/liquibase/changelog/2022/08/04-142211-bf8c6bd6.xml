@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.5.xsd"
+        objectQuotingStrategy="QUOTE_ONLY_RESERVED_WORDS">
+    <changeSet id="1" author="BPMLipaRent">
+        <createTable tableName="NATIONALITY">
+            <column name="ID" type="UUID">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_NATIONALITY"/>
+            </column>
+            <column name="COUNTRY" type="VARCHAR(50)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet id="2" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="ADDRESS" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="ADDRESS" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="3" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="BEDROOM" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="BEDROOM" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="4" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="DATE_OF_BIRTH" type="DATE"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="DATE_OF_BIRTH" defaultNullValue="now()" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="5" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="EMAIL" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="EMAIL" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="6" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="GPS_LOCATION" type="VARCHAR(100)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="GPS_LOCATION" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="7" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="IDENTIFICATION_NUMBER" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="IDENTIFICATION_NUMBER" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="8" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="LANDLORD_DIBURSEMENT" type="VARCHAR(255)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="LANDLORD_DIBURSEMENT" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="9" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="LANDLORD_DISBURSEMENT_SCHEDULE" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="LANDLORD_DISBURSEMENT_SCHEDULE" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="10" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="LANDLORD_REQUEST_AMOUNT" type="INT"/>
+            <column name="MIDDLENAME" type="VARCHAR(50)"/>
+            <column name="MOBILE_NO" type="VARCHAR(15)"/>
+            <column name="NEXT_OF_KIN_MIDDLE" type="VARCHAR(50)"/>
+            <column name="ROAD" type="VARCHAR(50)"/>
+            <column name="TOTAL_DISBURSEMENT" type="BIGINT"/>
+        </addColumn>
+    </changeSet>
+    <changeSet id="11" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="LANDLORD_TYPE" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="LANDLORD_TYPE" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="12" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="MINIMUM_OCCUPANCY" type="INT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="MINIMUM_OCCUPANCY" defaultNullValue="0" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="13" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="NATIONALITY_ID" type="UUID"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="NATIONALITY_ID" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="14" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="NEXT_OF_KIN_ADDRESS" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="NEXT_OF_KIN_ADDRESS" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="15" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="NEXT_OF_KIN_EMAIL_ADDRESS" type="VARCHAR(100)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="NEXT_OF_KIN_EMAIL_ADDRESS" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="16" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="NEXT_OF_KIN_FIRSTNAME" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="NEXT_OF_KIN_FIRSTNAME" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="17" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="NEXT_OF_KIN_LASTNAME" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="NEXT_OF_KIN_LASTNAME" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="18" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="NEXT_OF_KIN_MOBILE_NO" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="NEXT_OF_KIN_MOBILE_NO" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="19" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="ONE_MONTH_RRENT" type="BIGINT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="ONE_MONTH_RRENT" defaultNullValue="0" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="20" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="PROPERTY_EMAIL_ADDRESS" type="VARCHAR(255)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PROPERTY_EMAIL_ADDRESS" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="21" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="PROPERTY_IDENTITY" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PROPERTY_IDENTITY" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="22" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="PROPERTY_MOBILE_NO" type="VARCHAR(15)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PROPERTY_MOBILE_NO" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="23" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="PROPERTY_NAME" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PROPERTY_NAME" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="24" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="PROPERTY_TYPE" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PROPERTY_TYPE" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="25" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="PROPERT_ADDRESS" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="PROPERT_ADDRESS" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="26" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="REGION" type="VARCHAR(50)"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="REGION" defaultNullValue="''" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="27" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="THREE_MONTHS_RENT" type="BIGINT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="THREE_MONTHS_RENT" defaultNullValue="0" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="28" author="BPMLipaRent">
+        <addColumn tableName="LANDLORD">
+            <column name="TOTAL_YEARLY_RENT" type="BIGINT"/>
+        </addColumn>
+
+        <addNotNullConstraint columnName="TOTAL_YEARLY_RENT" defaultNullValue="0" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="29" author="BPMLipaRent">
+        <createIndex indexName="IDX_LANDLORD_NATIONALITY_ID" tableName="LANDLORD">
+            <column name="NATIONALITY_ID"/>
+        </createIndex>
+
+        <addForeignKeyConstraint baseColumnNames="NATIONALITY_ID" baseTableName="LANDLORD"
+                                 constraintName="FK_LANDLORD_ON_NATIONALITY" referencedColumnNames="ID"
+                                 referencedTableName="NATIONALITY"/>
+    </changeSet>
+    <changeSet id="30" author="BPMLipaRent">
+        <modifyDataType columnName="FIRSTNAME" newDataType="VARCHAR(50)" tableName="LANDLORD"/>
+    </changeSet>
+    <changeSet id="31" author="BPMLipaRent">
+        <modifyDataType columnName="LASTNAME" newDataType="VARCHAR(50)" tableName="LANDLORD"/>
+    </changeSet>
+</databaseChangeLog>

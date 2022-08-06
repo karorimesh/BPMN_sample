@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<window xmlns="http://jmix.io/schema/ui/window"
+        caption="msg://blankScreen.caption">
+    <data>
+        <instance id="landlordDc" class="com.company.bpmliparent.entity.Landlord">
+            <fetchPlan extends="_base"/>
+            <loader/>
+        </instance>
+    </data>
+    <facets>
+        <dataLoadCoordinator auto="true"/>
+        <screenSettings id="settingsFacet" auto="true"/>
+    </facets>
+    <actions>
+        <action id="windowCommitAndClose" caption="msg:///actions.Ok"
+                icon="EDITOR_OK"
+                primary="true"
+                shortcut="${COMMIT_SHORTCUT}"/>
+        <action id="windowClose"
+                caption="msg:///actions.Close"
+                icon="EDITOR_CANCEL"/>
+        <action id="next"/>
+    </actions>
+    <layout>
+        <tabSheet id="customTabSheet" width="100%" tabIndex="0">
+            <tab id="someTab" caption="Personal Information" >
+                <form id="landlordForm" dataContainer="landlordDc" >
+                    <textField id="lastnameField" property="lastname"/>
+                </form>
+
+                <button id="nextBtn" action="next" caption="Next"/>
+
+            </tab>
+            <tab id="someTab2" caption="Property Information">
+                <form id="landlordForm2" dataContainer="landlordDc" >
+                    <textField id="firstnameField" property="firstname"/>
+                </form>
+                <button id="nextBtn1" action="next" caption="Next"/>
+            </tab>
+            <tab id="secondTab" caption="Confirmation">
+                <hbox id="editActions" spacing="true">
+                    <button id="commitAndCloseBtn" action="windowCommitAndClose"/>
+                    <button id="closeBtn" action="windowClose"/>
+                </hbox>
+            </tab>
+                </tabSheet>
+    </layout>
+</window>
